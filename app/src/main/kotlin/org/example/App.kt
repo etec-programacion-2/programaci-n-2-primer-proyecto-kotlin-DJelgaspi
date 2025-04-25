@@ -11,6 +11,8 @@ fun main() {
     mostrarTiposDeDatos()
     calcularYMostrarAreaRectangulo()
     printeos()
+    mostrarNumerosConLoops()
+    mostrarNumerosParesConLoops()
 }
 
 fun mostrarTiposDeDatos() {
@@ -60,6 +62,49 @@ fun printeos() {
 }
 
 //paso 4
+
+fun mostrarNumerosConLoops() {
+    println("Usando for:")
+    for (i in 1..10) {
+        println(i)
+    }
+    
+    println("\nUsando while:")
+    var j = 1
+    while (j <= 10) {
+        println(j)
+        j++
+    }
+    
+    println("\nUsando do-while:")
+    var k = 1
+    do {
+        println(k)
+        k++
+    } while (k <= 10)
+}
+
+fun mostrarNumerosParesConLoops() {
+    println("Usando for (números pares del 2 al 20):")
+    for (i in 2..20 step 2) {
+        println(i)
+    }
+
+    println("\nUsando while (números pares del 2 al 20):")
+    var j = 2
+    while (j <= 20) {
+        println(j)
+        j += 2
+    }
+
+    println("\nUsando do-while (números pares del 2 al 20):")
+    var k = 2
+    do {
+        println(k)
+        k += 2
+    } while (k <= 20)
+}
+
 
 
 
