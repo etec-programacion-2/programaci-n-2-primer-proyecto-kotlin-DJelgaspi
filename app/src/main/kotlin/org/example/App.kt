@@ -17,11 +17,24 @@ fun main() {
     println("El factorial de $numero es: ${factorial(numero)}")
 
     saludar("gaspar", 16)
-    saludar("gaspar")
+    saludar("facu")
 
     val base = 2
     val exponente = 3
     println("$base elevado a la potencia de $exponente es: ${potencia(base, exponente)}")
+    demostrarAlcanceVariables()
+
+    val numeros = listOf(3, 5, 1, 9, 2, 8)
+    val promedio = calcularPromedio(numeros)
+    println("El promedio de los números es: $promedio")
+    
+    val resultado = encontrarMinimoYMaximo(numeros)
+    if (resultado != null) {
+        println("El número más pequeño es: ${resultado.first}")
+        println("El número más grande es: ${resultado.second}")
+    } else {
+        println("La lista está vacía")
+    }
 }
 
 fun mostrarTiposDeDatos() {
@@ -128,6 +141,51 @@ fun potencia(base: Int, exponente: Int): Int {
     return Math.pow(base.toDouble(), exponente.toDouble()).toInt()
 }
 
+fun demostrarAlcanceVariables() {
+    val variableGlobal = "global de la funci"
+    
+    if (true) {
+        val variableIf = "Soy local del if"
+        println("Dentro del if: $variableIf")
+        println("Puedo acceder a: $variableGlobal")
+    }
+    
+    for (i in 1..3) {
+        val variableFor = "Soy local del for - iteración $i"
+        println("Dentro del for: $variableFor")
+        println("Puedo acceder a: $variableGlobal")
+    }
+}
+
+fun calcularPromedio(numeros: List<Int>): Double {
+    var suma = 0
+    var contador = 0
+    
+    for (numero in numeros) {
+        suma += numero
+        contador++
+    }
+    
+    return if (contador > 0) suma.toDouble() / contador else 0.0
+}
+
+fun encontrarMinimoYMaximo(numeros: List<Int>): Pair<Int, Int>? {
+    if (numeros.isEmpty()) return null
+    
+    var max = numeros[0]
+    var min = numeros[0]
+    
+    for (numero in numeros) {
+        if (numero > max) {
+            max = numero
+        }
+        if (numero < min) {
+            min = numero
+        }
+    }
+    
+    return Pair(min, max)
+}
 
 
 
