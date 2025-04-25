@@ -13,6 +13,15 @@ fun main() {
     printeos()
     mostrarNumerosConLoops()
     mostrarNumerosParesConLoops()
+        val numero = 5
+    println("El factorial de $numero es: ${factorial(numero)}")
+
+    saludar("gaspar", 16)
+    saludar("gaspar")
+
+    val base = 2
+    val exponente = 3
+    println("$base elevado a la potencia de $exponente es: ${potencia(base, exponente)}")
 }
 
 fun mostrarTiposDeDatos() {
@@ -103,6 +112,20 @@ fun mostrarNumerosParesConLoops() {
         println(k)
         k += 2
     } while (k <= 20)
+}
+
+//paso 5
+
+fun factorial(n: Int): Int {
+    return if (n <= 1) 1 else n * factorial(n - 1)
+}
+
+fun saludar(nombre: String, edad: Int = 0) {
+    println("Hola $nombre, tienes $edad años")
+}
+
+fun potencia(base: Int, exponente: Int): Int {
+    return Math.pow(base.toDouble(), exponente.toDouble()).toInt()
 }
 
 
