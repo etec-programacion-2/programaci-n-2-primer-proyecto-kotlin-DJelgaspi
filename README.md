@@ -2,7 +2,7 @@
 
 ## Información del Alumno
 - Nombre: [Gaspar]
-- Apellido: [Gimemez]
+- Apellido: [Gimenez]
 
 Este proyecto está diseñado para aprender Kotlin de manera progresiva, implementando funcionalidades paso a paso. Cada paso debe ser subido al repositorio antes de continuar con el siguiente.
 
